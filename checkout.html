@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Finalizar Compra Segura | 6 Magnésios + B12 Jota'B</title>
+  <meta name="description" content="Checkout oficial e blindado para compra do 6 Magnésios + B12 Metilcobalamina Jota'B. Envio rápido e ambiente 100% seguro.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicon Oficial -->
+  <link rel="icon" type="image/png" href="logojotab.png">
+
+  <!-- Fontes Oficiais -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body class="checkout-body">
+
+  <!-- 1. CABEÇALHO SEGURO DO CHECKOUT -->
+  <header class="checkout-header">
+    <div class="container checkout-header-inner">
+      <a href="index.html" class="checkout-brand" aria-label="Voltar para a loja Jota'B">
+        <img src="logojotab.png" alt="Jota'B Logo" class="checkout-brand-img">
+        <span class="checkout-brand-name">JOTA'B<span>.</span></span>
+      </a>
+
+      <div class="checkout-security-tag">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        <span>Ambiente 100% Seguro</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. RESUMO DO PEDIDO NO TOPO (ACCORDION FECHADO POR PADRÃO) -->
+  <section class="checkout-summary-section" id="summaryAccordionWrapper">
+    <div class="container">
+      <div class="summary-accordion-card">
+        <button type="button" class="summary-toggle-btn" id="btnToggleSummary" aria-expanded="false" aria-controls="summaryContentDrawer">
+          <div class="summary-toggle-left">
+            <div class="summary-bag-icon">
+              <svg viewBox="0 0 24 24"><path d="M19 6h-2c0-2.76-2.24-5-5-5S7 3.24 7 6H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-7-3c1.66 0 3 1.34 3 3H9c0-1.66 1.34-3 3-3zm7 17H5V8h14v12z"/></svg>
+            </div>
+            <div class="summary-toggle-texts">
+              <span class="summary-toggle-title">Resumo do Pedido</span>
+              <span class="summary-toggle-sub" id="summaryItemsCount">(Kit Selecionado)</span>
+            </div>
+            <svg class="summary-chevron-icon" id="summaryChevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+          </div>
+
+          <div class="summary-toggle-right">
+            <span class="summary-header-total" id="summaryHeaderTotal">R$ 92,90</span>
+          </div>
+        </button>
+
+        <!-- CONTEÚDO EXPANSÍVEL DO RESUMO (INICIA FECHADO) -->
+        <div class="summary-content-drawer" id="summaryContentDrawer" style="display: none;">
+          <div class="summary-product-row">
+            <div class="summary-thumb-box">
+              <img id="summaryProductImage" src="assets/images/kit_3.jpg" alt="Produto 6 Magnésios Jota'B">
+              <span class="summary-qty-badge" id="summaryQtyBadge">1</span>
+            </div>
+            <div class="summary-info-col">
+              <h4 class="summary-product-name" id="summaryProductName">6 Magnésios + B12 Jota'B - Kit 3 Potes</h4>
+              <p class="summary-product-sub" id="summaryProductSub">Tratamento para 3 Meses • 180 Cápsulas</p>
+              <div class="summary-price-display" id="summaryProductPrice">R$ 92,90</div>
+            </div>
+          </div>
+
+          <!-- CAMPO DE CUPOM DE DESCONTO -->
+          <div class="summary-coupon-box">
+            <form class="coupon-form" id="couponForm" onsubmit="return false;">
+              <div class="coupon-input-wrapper">
+                <svg class="coupon-icon" viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>
+                <input type="text" id="couponInput" class="coupon-input" placeholder="Cupom de desconto" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="20">
+              </div>
+              <button type="button" class="btn-apply-coupon" id="btnApplyCoupon">Aplicar</button>
+            </form>
+            <div class="coupon-feedback" id="couponFeedback" style="display: none;"></div>
+          </div>
+
+          <!-- TABELA DE CÁLCULO DE VALORES -->
+          <div class="summary-totals-breakdown">
+            <div class="summary-calc-row">
+              <span class="calc-label">Subtotal:</span>
+              <span class="calc-val" id="summarySubtotalVal">R$ 92,90</span>
+            </div>
+            <div class="summary-calc-row">
+              <span class="calc-label">Frete:</span>
+              <span class="calc-val text-muted" id="summaryShippingVal">Calcular na entrega</span>
+            </div>
+            <div class="summary-calc-row" id="summaryDiscountRow" style="display: none;">
+              <span class="calc-label text-success">Desconto Cupom:</span>
+              <span class="calc-val text-success" id="summaryDiscountVal">- R$ 0,00</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-calc-row total-row">
+              <span class="total-label">Total a Pagar:</span>
+              <div class="total-val-box">
+                <span class="total-currency">R$</span>
+                <span class="total-number" id="summaryFinalTotal">92,90</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. CONTAINER PRINCIPAL: STEPPER E FORMULÁRIOS -->
+  <main class="container checkout-container">
+
+    <!-- STEPPER DE 3 PASSOS -->
+    <div class="checkout-stepper-wrapper">
+      <div class="stepper-progress-bar">
+        <div class="stepper-fill" id="stepperFill"></div>
+      </div>
+
+      <div class="step-node active" id="stepNode1" data-step="1">
+        <div class="step-circle">1</div>
+        <span class="step-label">Identificação</span>
+      </div>
+
+      <div class="step-node" id="stepNode2" data-step="2">
+        <div class="step-circle">2</div>
+        <span class="step-label">Entrega</span>
+      </div>
+
+      <div class="step-node" id="stepNode3" data-step="3">
+        <div class="step-circle">3</div>
+        <span class="step-label">Pagamento</span>
+      </div>
+    </div>
+
+    <!-- FORMULÁRIO PRINCIPAL MULTI-STEP -->
+    <div class="checkout-card">
+
+      <!-- ====================================================================
+           PASSO 1: DADOS PESSOAIS / IDENTIFICAÇÃO (SEM CAMPO DE CPF)
+           ==================================================================== -->
+      <section class="checkout-step-panel fade-in active" id="stepPanel1">
+        <div class="step-panel-header">
+          <div class="step-icon-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          </div>
+          <div>
+            <h2 class="step-panel-title">Passo 1: Seus Dados</h2>
+            <p class="step-panel-sub">Para envio da nota fiscal e atualizações de rastreio</p>
+          </div>
+        </div>
+
+        <form id="formStep1" class="checkout-form-grid" novalidate>
+          <div class="form-group full-width">
+            <label for="fullNameInput" class="form-label">Nome Completo <span class="req">*</span></label>
+            <div class="input-with-icon">
+              <svg class="field-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+              <input type="text" id="fullNameInput" class="form-control" placeholder="Digite seu nome completo" autocomplete="name" required>
+            </div>
+            <span class="field-error" id="fullNameError"></span>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="emailInput" class="form-label">E-mail <span class="req">*</span></label>
+            <div class="input-with-icon">
+              <svg class="field-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <input type="email" id="emailInput" class="form-control" placeholder="seuemail@exemplo.com" autocomplete="email" required>
+            </div>
+            <span class="field-error" id="emailError"></span>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="phoneInput" class="form-label">Telefone / WhatsApp <span class="req">*</span></label>
+            <div class="input-with-icon">
+              <svg class="field-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <input type="tel" id="phoneInput" class="form-control" placeholder="(00) 00000-0000" maxlength="15" autocomplete="tel" required>
+            </div>
+            <span class="field-error" id="phoneError"></span>
+          </div>
+
+          <div class="form-actions full-width">
+            <button type="button" class="btn-primary-checkout" id="btnGoToStep2">
+              <span>IR PARA A ENTREGA</span>
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ====================================================================
+           PASSO 2: ENDEREÇO DE ENTREGA (COM API CEP AUTOMÁTICA)
+           ==================================================================== -->
+      <section class="checkout-step-panel fade-in" id="stepPanel2" style="display: none;">
+        <div class="step-panel-header">
+          <div class="step-icon-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div>
+            <h2 class="step-panel-title">Passo 2: Endereço de Entrega</h2>
+            <p class="step-panel-sub">Digite seu CEP para preenchimento automático</p>
+          </div>
+        </div>
+
+        <form id="formStep2" class="checkout-form-grid" novalidate>
+          
+          <div class="form-group full-width">
+            <label for="cepInput" class="form-label">CEP <span class="req">*</span></label>
+            <div class="input-with-icon">
+              <svg class="field-icon" viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+              <input type="tel" id="cepInput" class="form-control" placeholder="00000-000" maxlength="9" autocomplete="postal-code" required>
+              <span class="cep-loading-spinner" id="cepSpinner" style="display: none;">
+                <svg viewBox="0 0 24 24"><path d="M12 4V2A10 10 0 0 0 2 12h2a8 8 0 0 1 8-8z"/></svg>
+              </span>
+            </div>
+            <div class="field-help-row">
+              <span class="field-error" id="cepError"></span>
+              <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" target="_blank" rel="noopener noreferrer" class="link-dont-know-cep">Não sei meu CEP</a>
+            </div>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="streetInput" class="form-label">Endereço (Rua / Avenida) <span class="req">*</span></label>
+            <input type="text" id="streetInput" class="form-control" placeholder="Ex: Rua das Flores" autocomplete="address-line1" required>
+            <span class="field-error" id="streetError"></span>
+          </div>
+
+          <div class="form-group half-width">
+            <label for="numberInput" class="form-label">Número <span class="req">*</span></label>
+            <input type="text" id="numberInput" class="form-control" placeholder="Ex: 123" required>
+            <span class="field-error" id="numberError"></span>
+          </div>
+
+          <div class="form-group half-width">
+            <label for="complementInput" class="form-label">Complemento <span class="opt">(opcional)</span></label>
+            <input type="text" id="complementInput" class="form-control" placeholder="Apto, Bloco, Casa 2">
+          </div>
+
+          <div class="form-group full-width">
+            <label for="neighborhoodInput" class="form-label">Bairro <span class="req">*</span></label>
+            <input type="text" id="neighborhoodInput" class="form-control" placeholder="Ex: Centro" required>
+            <span class="field-error" id="neighborhoodError"></span>
+          </div>
+
+          <div class="form-group half-width-70">
+            <label for="cityInput" class="form-label">Cidade <span class="req">*</span></label>
+            <input type="text" id="cityInput" class="form-control" placeholder="Ex: São Paulo" required>
+            <span class="field-error" id="cityError"></span>
+          </div>
+
+          <div class="form-group half-width-30">
+            <label for="stateInput" class="form-label">UF <span class="req">*</span></label>
+            <input type="text" id="stateInput" class="form-control text-uppercase" placeholder="SP" maxlength="2" required>
+            <span class="field-error" id="stateError"></span>
+          </div>
+
+          <!-- SELEÇÃO DE FRETE (Aparece após informar o CEP) -->
+          <div class="shipping-method-box full-width" id="shippingMethodBox" style="display: none;">
+            <div class="shipping-option selected">
+              <div class="shipping-option-radio"></div>
+              <div class="shipping-option-info">
+                <div class="shipping-name">Jota B Transportes</div>
+                <div class="shipping-time">Envio Expresso com Seguro e Rastreamento (4 a 5 dias úteis)</div>
+              </div>
+              <div class="shipping-price-badge" id="shippingPriceBadge">R$ 9,74</div>
+            </div>
+
+            <!-- CAMPO DE CUPOM DE DESCONTO ABAIXO DO FRETE -->
+            <div class="step2-coupon-box" id="step2CouponBox">
+              <label for="step2CouponInput" class="step2-coupon-label">Possui um cupom para o frete? Insira aqui e ganhe frete grátis!</label>
+              <div class="coupon-form">
+                <div class="coupon-input-wrapper">
+                  <svg class="coupon-icon" viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/></svg>
+                  <input type="text" id="step2CouponInput" class="coupon-input" placeholder="Cupom de desconto" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="20">
+                </div>
+                <button type="button" class="btn-apply-coupon" id="btnApplyCouponStep2">Aplicar</button>
+              </div>
+              <div class="coupon-feedback" id="step2CouponFeedback" style="display: none;"></div>
+            </div>
+          </div>
+
+          <div class="form-actions-split full-width">
+            <button type="button" class="btn-secondary-checkout" id="btnBackToStep1">
+              <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+              <span>Voltar</span>
+            </button>
+            <button type="button" class="btn-primary-checkout" id="btnGoToStep3">
+              <span>IR PARA O PAGAMENTO</span>
+              <svg viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <!-- ====================================================================
+           PASSO 3: PAGAMENTO (PIX & CARTÃO DE CRÉDITO)
+           ==================================================================== -->
+      <section class="checkout-step-panel fade-in" id="stepPanel3" style="display: none;">
+        <div class="step-panel-header">
+          <div class="step-icon-badge">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.1 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+          </div>
+          <div>
+            <h2 class="step-panel-title">Passo 3: Forma de Pagamento</h2>
+            <p class="step-panel-sub">Escolha a opção desejada para concluir com segurança</p>
+          </div>
+        </div>
+
+        <!-- ABAS DE SELEÇÃO DE PAGAMENTO -->
+        <div class="payment-tabs-nav" role="tablist">
+          <button type="button" class="payment-tab-btn active" id="tabBtnPix" data-method="pix" role="tab" aria-selected="true">
+            <div class="payment-tab-icon" style="color: #10b981;">
+              <svg viewBox="0 0 800 800" fill="#10b981">
+                <path d="M 398 445 L 393 447 L 284 556 L 268 569 L 249 579 L 232 584 L 213 585 L 212 586 L 191 586 L 326 721 L 337 730 L 352 739 L 374 747 L 384 748 L 385 749 L 414 749 L 415 748 L 420 748 L 421 747 L 432 745 L 445 739 L 447 739 L 456 734 L 467 726 L 475 719 L 608 585 L 586 585 L 585 584 L 578 584 L 557 578 L 540 569 L 528 560 L 415 447 L 413 447 L 410 445 Z" />
+                <path d="M 49 396 L 50 414 L 51 415 L 51 420 L 52 421 L 53 429 L 58 443 L 67 459 L 77 472 L 161 555 L 166 555 L 167 554 L 224 554 L 229 552 L 233 552 L 252 543 L 261 536 L 373 424 L 383 418 L 396 414 L 412 414 L 413 415 L 417 415 L 425 419 L 427 419 L 435 424 L 548 537 L 556 543 L 568 549 L 581 553 L 586 553 L 587 554 L 635 554 L 638 555 L 718 476 L 728 464 L 736 452 L 741 442 L 745 431 L 745 428 L 748 419 L 748 413 L 749 412 L 749 387 L 748 386 L 747 375 L 742 359 L 732 340 L 727 333 L 638 244 L 635 244 L 634 245 L 586 245 L 585 246 L 573 248 L 561 253 L 549 261 L 435 375 L 428 380 L 426 380 L 415 385 L 399 386 L 398 385 L 389 384 L 380 380 L 374 376 L 261 263 L 252 256 L 239 249 L 236 249 L 233 247 L 225 246 L 224 245 L 167 245 L 162 243 L 81 323 L 69 337 L 60 352 L 60 354 L 55 364 L 54 370 L 52 374 L 52 378 L 51 379 L 50 395 Z" />
+                <path d="M 386 50 L 385 51 L 379 51 L 378 52 L 367 54 L 361 57 L 359 57 L 352 61 L 350 61 L 332 73 L 192 213 L 192 214 L 212 214 L 213 213 L 217 213 L 218 214 L 232 215 L 249 220 L 265 228 L 280 239 L 281 241 L 282 241 L 393 352 L 398 354 L 405 355 L 415 352 L 528 239 L 537 232 L 557 221 L 569 217 L 573 217 L 579 215 L 585 215 L 586 214 L 608 214 L 467 73 L 452 63 L 432 54 L 429 54 L 420 51 L 414 51 L 413 50 Z" />
+              </svg>
+            </div>
+            <span>PIX Instantâneo</span>
+            <span class="tab-badge-fast">Aprovação Imediata</span>
+          </button>
+
+          <button type="button" class="payment-tab-btn" id="tabBtnCard" data-method="card" role="tab" aria-selected="false">
+            <div class="payment-tab-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.1 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+            </div>
+            <span>Cartão de Crédito</span>
+            <span class="tab-badge-installments">Até 12x</span>
+          </button>
+        </div>
+
+        <!-- CONTEÚDO DA ABA: PIX -->
+        <div class="payment-tab-pane active" id="panePix">
+          <div class="pix-instructions-card">
+            <div class="pix-card-top">
+              <div class="pix-logo-icon">
+                <svg viewBox="0 0 800 800" fill="#ffffff">
+                  <path d="M 398 445 L 393 447 L 284 556 L 268 569 L 249 579 L 232 584 L 213 585 L 212 586 L 191 586 L 326 721 L 337 730 L 352 739 L 374 747 L 384 748 L 385 749 L 414 749 L 415 748 L 420 748 L 421 747 L 432 745 L 445 739 L 447 739 L 456 734 L 467 726 L 475 719 L 608 585 L 586 585 L 585 584 L 578 584 L 557 578 L 540 569 L 528 560 L 415 447 L 413 447 L 410 445 Z" />
+                  <path d="M 49 396 L 50 414 L 51 415 L 51 420 L 52 421 L 53 429 L 58 443 L 67 459 L 77 472 L 161 555 L 166 555 L 167 554 L 224 554 L 229 552 L 233 552 L 252 543 L 261 536 L 373 424 L 383 418 L 396 414 L 412 414 L 413 415 L 417 415 L 425 419 L 427 419 L 435 424 L 548 537 L 556 543 L 568 549 L 581 553 L 586 553 L 587 554 L 635 554 L 638 555 L 718 476 L 728 464 L 736 452 L 741 442 L 745 431 L 745 428 L 748 419 L 748 413 L 749 412 L 749 387 L 748 386 L 747 375 L 742 359 L 732 340 L 727 333 L 638 244 L 635 244 L 634 245 L 586 245 L 585 246 L 573 248 L 561 253 L 549 261 L 435 375 L 428 380 L 426 380 L 415 385 L 399 386 L 398 385 L 389 384 L 380 380 L 374 376 L 261 263 L 252 256 L 239 249 L 236 249 L 233 247 L 225 246 L 224 245 L 167 245 L 162 243 L 81 323 L 69 337 L 60 352 L 60 354 L 55 364 L 54 370 L 52 374 L 52 378 L 51 379 L 50 395 Z" />
+                  <path d="M 386 50 L 385 51 L 379 51 L 378 52 L 367 54 L 361 57 L 359 57 L 352 61 L 350 61 L 332 73 L 192 213 L 192 214 L 212 214 L 213 213 L 217 213 L 218 214 L 232 215 L 249 220 L 265 228 L 280 239 L 281 241 L 282 241 L 393 352 L 398 354 L 405 355 L 415 352 L 528 239 L 537 232 L 557 221 L 569 217 L 573 217 L 579 215 L 585 215 L 586 214 L 608 214 L 467 73 L 452 63 L 432 54 L 429 54 L 420 51 L 414 51 L 413 50 Z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="pix-card-title">Pagamento via PIX</h4>
+                <p class="pix-card-sub">Liberação mais rápida do pedido em menos de 1 minuto</p>
+              </div>
+            </div>
+
+            <ul class="pix-benefits-list">
+              <li>
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Aprovação e envio prioritário</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Código PIX Copia e Cola gerado na próxima tela</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Pagável em qualquer banco pelo aplicativo</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="form-actions-split full-width" style="margin-top: 18px;">
+            <button type="button" class="btn-secondary-checkout" id="btnBackToStep2FromPix">
+              <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+              <span>Voltar</span>
+            </button>
+            <button type="button" class="btn-primary-checkout btn-pay-pix" id="btnSubmitPix">
+              <svg viewBox="0 0 800 800" fill="#ffffff">
+                <path d="M 398 445 L 393 447 L 284 556 L 268 569 L 249 579 L 232 584 L 213 585 L 212 586 L 191 586 L 326 721 L 337 730 L 352 739 L 374 747 L 384 748 L 385 749 L 414 749 L 415 748 L 420 748 L 421 747 L 432 745 L 445 739 L 447 739 L 456 734 L 467 726 L 475 719 L 608 585 L 586 585 L 585 584 L 578 584 L 557 578 L 540 569 L 528 560 L 415 447 L 413 447 L 410 445 Z" />
+                <path d="M 49 396 L 50 414 L 51 415 L 51 420 L 52 421 L 53 429 L 58 443 L 67 459 L 77 472 L 161 555 L 166 555 L 167 554 L 224 554 L 229 552 L 233 552 L 252 543 L 261 536 L 373 424 L 383 418 L 396 414 L 412 414 L 413 415 L 417 415 L 425 419 L 427 419 L 435 424 L 548 537 L 556 543 L 568 549 L 581 553 L 586 553 L 587 554 L 635 554 L 638 555 L 718 476 L 728 464 L 736 452 L 741 442 L 745 431 L 745 428 L 748 419 L 748 413 L 749 412 L 749 387 L 748 386 L 747 375 L 742 359 L 732 340 L 727 333 L 638 244 L 635 244 L 634 245 L 586 245 L 585 246 L 573 248 L 561 253 L 549 261 L 435 375 L 428 380 L 426 380 L 415 385 L 399 386 L 398 385 L 389 384 L 380 380 L 374 376 L 261 263 L 252 256 L 239 249 L 236 249 L 233 247 L 225 246 L 224 245 L 167 245 L 162 243 L 81 323 L 69 337 L 60 352 L 60 354 L 55 364 L 54 370 L 52 374 L 52 378 L 51 379 L 50 395 Z" />
+                <path d="M 386 50 L 385 51 L 379 51 L 378 52 L 367 54 L 361 57 L 359 57 L 352 61 L 350 61 L 332 73 L 192 213 L 192 214 L 212 214 L 213 213 L 217 213 L 218 214 L 232 215 L 249 220 L 265 228 L 280 239 L 281 241 L 282 241 L 393 352 L 398 354 L 405 355 L 415 352 L 528 239 L 537 232 L 557 221 L 569 217 L 573 217 L 579 215 L 585 215 L 586 214 L 608 214 L 467 73 L 452 63 L 432 54 L 429 54 L 420 51 L 414 51 L 413 50 Z" />
+              </svg>
+              <span id="btnPixLabel">GERAR PIX DE R$ 92,90</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- CONTEÚDO DA ABA: CARTÃO DE CRÉDITO -->
+        <div class="payment-tab-pane" id="paneCard" style="display: none;">
+          <form id="formCardPayment" class="checkout-form-grid" novalidate>
+            <div class="form-group full-width">
+              <label for="cardNumberInput" class="form-label">Número do Cartão <span class="req">*</span></label>
+              <div class="input-with-icon">
+                <svg class="field-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.1 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+                <input type="tel" id="cardNumberInput" class="form-control" placeholder="0000 0000 0000 0000" maxlength="19" autocomplete="cc-number" required>
+              </div>
+              <span class="field-error" id="cardNumberError"></span>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="cardHolderInput" class="form-label">Nome Impresso no Cartão <span class="req">*</span></label>
+              <input type="text" id="cardHolderInput" class="form-control text-uppercase" placeholder="COMO ESTÁ NO CARTÃO" autocomplete="cc-name" required>
+              <span class="field-error" id="cardHolderError"></span>
+            </div>
+
+            <div class="form-group half-width">
+              <label for="cardExpiryInput" class="form-label">Validade <span class="req">*</span></label>
+              <input type="tel" id="cardExpiryInput" class="form-control" placeholder="MM/AA" maxlength="5" autocomplete="cc-exp" required>
+              <span class="field-error" id="cardExpiryError"></span>
+            </div>
+
+            <div class="form-group half-width">
+              <label for="cardCvvInput" class="form-label">CVV <span class="req">*</span></label>
+              <div class="input-with-icon">
+                <input type="tel" id="cardCvvInput" class="form-control" placeholder="123" maxlength="4" autocomplete="cc-csc" required>
+                <span class="cvv-help-tag">3 ou 4 dígitos</span>
+              </div>
+              <span class="field-error" id="cardCvvError"></span>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="cardInstallmentsSelect" class="form-label">Parcelamento <span class="req">*</span></label>
+              <div class="select-wrapper">
+                <select id="cardInstallmentsSelect" class="form-control" required>
+                  <option value="1">1x de R$ 92,90 (sem juros)</option>
+                  <option value="2">2x de R$ 46,45 (sem juros)</option>
+                  <option value="3">3x de R$ 30,97 (sem juros)</option>
+                  <option value="4">4x de R$ 23,23 (sem juros)</option>
+                  <option value="6">6x de R$ 15,48 (sem juros)</option>
+                  <option value="12" selected>12x de R$ 9,29</option>
+                </select>
+                <svg class="select-chevron" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+              </div>
+            </div>
+
+            <div class="form-actions-split full-width">
+              <button type="button" class="btn-secondary-checkout" id="btnBackToStep2FromCard">
+                <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                <span>Voltar</span>
+              </button>
+              <button type="button" class="btn-primary-checkout btn-pay-card" id="btnSubmitCard">
+                <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                <span id="btnCardLabel">FINALIZAR PEDIDO</span>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- SELOS DE SEGURANÇA DO CHECKOUT -->
+        <div class="checkout-guarantee-row">
+          <div class="guarantee-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span>Dados Criptografados (SSL 256-Bit)</span>
+          </div>
+          <div class="guarantee-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Garantia de Entrega Jota'B</span>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 4. SEÇÃO DE PROVA SOCIAL COM 5 AVALIAÇÕES REAIS -->
+    <section class="checkout-reviews-section">
+      <div class="reviews-header-block">
+        <div class="stars-row">
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        </div>
+        <h3 class="reviews-title">Quem comprou, recomenda:</h3>
+        <p class="reviews-sub">Avaliações verificadas de quem já está usando o 6 Magnésios + B12 Jota'B</p>
+      </div>
+
+      <div class="checkout-reviews-list">
+        
+        <!-- AVALIAÇÃO 1 -->
+        <div class="checkout-review-card">
+          <div class="review-card-top">
+            <div class="review-author-info">
+              <span class="review-author-name">Maria Aparecida Silveira</span>
+              <span class="review-author-city">São Paulo / SP</span>
+            </div>
+            <div class="review-stars-mini">★★★★★</div>
+          </div>
+          <p class="review-comment">"Estou tomando há 2 semanas e minhas dores nas pernas sumiram completamente. O sono melhorou muito também, acordo descansada!"</p>
+          <span class="review-verified-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span>Compra Verificada</span>
+          </span>
+        </div>
+
+        <!-- AVALIAÇÃO 2 -->
+        <div class="checkout-review-card">
+          <div class="review-card-top">
+            <div class="review-author-info">
+              <span class="review-author-name">Carlos Eduardo Mendes</span>
+              <span class="review-author-city">Belo Horizonte / MG</span>
+            </div>
+            <div class="review-stars-mini">★★★★★</div>
+          </div>
+          <p class="review-comment">"Excelente produto, original e muito bem embalado. Chegou em apenas 3 dias aqui em MG. Minha disposição física aumentou muito no trabalho."</p>
+          <span class="review-verified-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span>Compra Verificada</span>
+          </span>
+        </div>
+
+        <!-- AVALIAÇÃO 3 -->
+        <div class="checkout-review-card">
+          <div class="review-card-top">
+            <div class="review-author-info">
+              <span class="review-author-name">Regina Fátima de Souza</span>
+              <span class="review-author-city">Curitiba / PR</span>
+            </div>
+            <div class="review-stars-mini">★★★★★</div>
+          </div>
+          <p class="review-comment">"Comprei o kit com 3 potes pelo desconto e valeu cada centavo. A fórmula de 6 magnésios com B12 realmente dá muita vitalidade ao longo do dia."</p>
+          <span class="review-verified-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span>Compra Verificada</span>
+          </span>
+        </div>
+
+        <!-- AVALIAÇÃO 4 -->
+        <div class="checkout-review-card">
+          <div class="review-card-top">
+            <div class="review-author-info">
+              <span class="review-author-name">Marcos Antônio Rocha</span>
+              <span class="review-author-city">Salvador / BA</span>
+            </div>
+            <div class="review-stars-mini">★★★★★</div>
+          </div>
+          <p class="review-comment">"Entrega rápida e produto 100% lacrado. Tomo 2 cápsulas à noite e acordo sem aquela rigidez muscular na coluna. Recomendo para todos!"</p>
+          <span class="review-verified-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span>Compra Verificada</span>
+          </span>
+        </div>
+
+        <!-- AVALIAÇÃO 5 -->
+        <div class="checkout-review-card">
+          <div class="review-card-top">
+            <div class="review-author-info">
+              <span class="review-author-name">Sandra Helena Guimarães</span>
+              <span class="review-author-city">Rio de Janeiro / RJ</span>
+            </div>
+            <div class="review-stars-mini">★★★★★</div>
+          </div>
+          <p class="review-comment">"Maravilhoso! Já é a segunda vez que compro. Muito mais prático tomar todos os magnésios juntos com B12 em uma cápsula só."</p>
+          <span class="review-verified-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span>Compra Verificada</span>
+          </span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 5. RODAPÉ SIMPLIFICADO DO CHECKOUT -->
+  <footer class="checkout-footer">
+    <div class="container">
+      <div class="checkout-footer-seals">
+        <div class="footer-seal-item">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          <span>Compra 100% Blindada</span>
+        </div>
+        <div class="footer-seal-item">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+          <span>Entrega Garantida para todo o Brasil</span>
+        </div>
+      </div>
+      <p class="checkout-footer-copy">© 2026 Jota'B Suplementos Nutricionais Ltda. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- 6. MODAL DINÂMICO DE PAGAMENTO PIX (100% WHITE-LABEL) -->
+  <div class="pix-modal-overlay" id="pixModalOverlay" style="display: none;" role="dialog" aria-modal="true" aria-labelledby="pixModalTitle">
+    <div class="pix-modal-card">
+      
+      <!-- CABEÇALHO DO MODAL -->
+      <div class="pix-modal-header">
+        <div class="pix-modal-title-row">
+          <div class="pix-modal-icon">
+            <svg viewBox="0 0 800 800" fill="#10b981">
+              <path d="M 398 445 L 393 447 L 284 556 L 268 569 L 249 579 L 232 584 L 213 585 L 212 586 L 191 586 L 326 721 L 337 730 L 352 739 L 374 747 L 384 748 L 385 749 L 414 749 L 415 748 L 420 748 L 421 747 L 432 745 L 445 739 L 447 739 L 456 734 L 467 726 L 475 719 L 608 585 L 586 585 L 585 584 L 578 584 L 557 578 L 540 569 L 528 560 L 415 447 L 413 447 L 410 445 Z" />
+              <path d="M 49 396 L 50 414 L 51 415 L 51 420 L 52 421 L 53 429 L 58 443 L 67 459 L 77 472 L 161 555 L 166 555 L 167 554 L 224 554 L 229 552 L 233 552 L 252 543 L 261 536 L 373 424 L 383 418 L 396 414 L 412 414 L 413 415 L 417 415 L 425 419 L 427 419 L 435 424 L 548 537 L 556 543 L 568 549 L 581 553 L 586 553 L 587 554 L 635 554 L 638 555 L 718 476 L 728 464 L 736 452 L 741 442 L 745 431 L 745 428 L 748 419 L 748 413 L 749 412 L 749 387 L 748 386 L 747 375 L 742 359 L 732 340 L 727 333 L 638 244 L 635 244 L 634 245 L 586 245 L 585 246 L 573 248 L 561 253 L 549 261 L 435 375 L 428 380 L 426 380 L 415 385 L 399 386 L 398 385 L 389 384 L 380 380 L 374 376 L 261 263 L 252 256 L 239 249 L 236 249 L 233 247 L 225 246 L 224 245 L 167 245 L 162 243 L 81 323 L 69 337 L 60 352 L 60 354 L 55 364 L 54 370 L 52 374 L 52 378 L 51 379 L 50 395 Z" />
+              <path d="M 386 50 L 385 51 L 379 51 L 378 52 L 367 54 L 361 57 L 359 57 L 352 61 L 350 61 L 332 73 L 192 213 L 192 214 L 212 214 L 213 213 L 217 213 L 218 214 L 232 215 L 249 220 L 265 228 L 280 239 L 281 241 L 282 241 L 393 352 L 398 354 L 405 355 L 415 352 L 528 239 L 537 232 L 557 221 L 569 217 L 573 217 L 579 215 L 585 215 L 586 214 L 608 214 L 467 73 L 452 63 L 432 54 L 429 54 L 420 51 L 414 51 L 413 50 Z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="pix-modal-title" id="pixModalTitle">Pague com PIX para confirmar seu pedido</h3>
+            <p class="pix-modal-subtitle">Aprovação imediata e envio prioritário</p>
+          </div>
+        </div>
+        <button type="button" class="pix-modal-close" id="btnClosePixModal" aria-label="Fechar Modal PIX">&times;</button>
+      </div>
+
+      <!-- VALOR E NÚMERO DO PEDIDO -->
+      <div class="pix-modal-order-summary">
+        <div class="order-summary-item">
+          <span class="order-summary-lbl">Valor do Pedido:</span>
+          <span class="order-summary-val" id="pixModalAmount">R$ 92,90</span>
+        </div>
+        <div class="order-summary-item">
+          <span class="order-summary-lbl">Pedido:</span>
+          <span class="order-summary-val" id="pixModalOrderId">#JB-849201</span>
+        </div>
+      </div>
+
+      <!-- TIMER EXPIRAÇÃO -->
+      <div class="pix-timer-box">
+        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+        <span>Este código PIX expira em: <strong id="pixTimerDisplay">15:00</strong></span>
+      </div>
+
+      <!-- QR CODE CONTAINER -->
+      <div class="pix-qr-section">
+        <div class="pix-qr-frame" id="pixQrContainer">
+          <!-- QR Code inserido via JavaScript -->
+        </div>
+        <p class="pix-qr-hint">Escaneie o QR Code acima pelo app do seu banco</p>
+      </div>
+
+      <!-- COPIA E COLA -->
+      <div class="pix-copy-section">
+        <label for="pixCopyCodeInput" class="pix-copy-label">Ou copie o código PIX Copia e Cola:</label>
+        <div class="pix-copy-input-wrap">
+          <input type="text" id="pixCopyCodeInput" class="pix-copy-input" readonly>
+          <button type="button" class="btn-copy-pix" id="btnCopyPix">
+            <svg viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            <span id="btnCopyPixText">Copiar Código PIX</span>
+          </button>
+        </div>
+        <div class="pix-copy-success" id="pixCopyFeedback" style="display: none;">
+          ✓ Código PIX copiado com sucesso! Abra o app do seu banco e cole na opção PIX Copia e Cola.
+        </div>
+      </div>
+
+      <!-- STATUS EM TEMPO REAL -->
+      <div class="pix-live-status-box">
+        <span class="pulse-dot"></span>
+        <span class="live-status-text">Aguardando confirmação do pagamento...</span>
+      </div>
+
+      <!-- INSTRUÇÕES RÁPIDAS -->
+      <div class="pix-instructions-steps">
+        <div class="pix-step-item">
+          <span class="pix-step-num">1</span>
+          <span>Abra o app do seu banco ou carteira digital</span>
+        </div>
+        <div class="pix-step-item">
+          <span class="pix-step-num">2</span>
+          <span>Escolha a opção <strong>PIX</strong> &gt; <strong>Pagar com QR Code ou Copia e Cola</strong></span>
+        </div>
+        <div class="pix-step-item">
+          <span class="pix-step-num">3</span>
+          <span>Confirme o pagamento. O sistema atualizará e redirecionará automaticamente!</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/qrcode.min.js"></script>
+  <script src="checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>6 Magnésios + B12 Metilcobalamina 60 Cápsulas | Jota'B Suplementos</title>
+  <meta name="description" content="Fórmula Premium 6 em 1: Ascorbato, Bisglicinato, Hidróxido, Malato, Óxido e Taurato de Magnésio combinados com Vitamina B12 Metilcobalamina. Mais energia, sono reparador e alívio muscular.">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Redes Sociais -->
+  <meta property="og:type" content="product">
+  <meta property="og:title" content="6 Magnésios + B12 Metilcobalamina 60 Cápsulas | Jota'B Suplementos">
+  <meta property="og:description" content="Fórmula completa com 6 tipos de magnésio e Vitamina B12 pura. Envio rápido para todo o Brasil.">
+  <meta property="og:image" content="assets/images/product_1.webp">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Favicon / Ícone de Aba Oficial -->
+  <link rel="icon" type="image/png" href="logojotab.png">
+</head>
+<body>
+
+  <!-- 1. BARRA SUPERIOR DE AVISO / FRETE -->
+  <div class="top-announcement">
+    <div class="svg-icon">
+      <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+    </div>
+    <span>FRETE GRÁTIS para todo o Brasil a partir de 2 potes!</span>
+  </div>
+
+  <!-- 2. CABEÇALHO DA LOJA -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <div class="header-left">
+        <button type="button" class="hamburger-btn" id="btnOpenSideMenu" aria-label="Abrir menu de navegação">
+          <svg class="hamburger-icon-svg" viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="2.2" rx="1.1" fill="currentColor"/>
+            <rect x="3" y="10.9" width="18" height="2.2" rx="1.1" fill="currentColor"/>
+            <rect x="3" y="16.8" width="18" height="2.2" rx="1.1" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="header-center">
+        <a href="#loja" class="brand-logo" aria-label="Jota'B Suplementos">
+          <img src="logojotab.png" alt="Jota'B Suplementos Logo" class="brand-logo-img">
+          <div class="brand-logo-text">JOTA'B<span>.</span></div>
+        </a>
+      </div>
+      
+      <div class="header-right">
+        <div class="verified-store-tag">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          <span>Loja Oficial</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MENU LATERAL (DRAWER) -->
+  <div class="drawer-overlay" id="drawerOverlay" aria-hidden="true"></div>
+
+  <aside class="side-menu-drawer" id="sideMenuDrawer" aria-label="Menu Lateral de Navegação" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <img src="logojotab.png" alt="Jota'B Logo" class="drawer-logo-img">
+        <span class="drawer-brand-name">JOTA'B<span>.</span></span>
+      </div>
+      <button type="button" class="btn-close-drawer" id="btnCloseSideMenu" aria-label="Fechar menu lateral">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- BLOCO: RASTREAR PEDIDO -->
+      <div class="drawer-tracking-box">
+        <div class="tracking-box-header">
+          <div class="tracking-icon-badge">
+            <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          </div>
+          <div>
+            <h3 class="tracking-title">Rastrear Pedido</h3>
+            <p class="tracking-subtitle">Acompanhe a entrega em tempo real</p>
+          </div>
+        </div>
+
+        <form class="tracking-form" id="trackingForm" onsubmit="return false;">
+          <div class="tracking-input-wrapper">
+            <div class="tracking-input-icon">
+              <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+            <input type="text" id="trackingInput" class="tracking-input" placeholder="Digite seu código de rastreio" maxlength="24" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-label="Código de rastreio">
+            <button type="button" class="btn-clear-tracking" id="btnClearTracking" style="display: none;" aria-label="Limpar código">
+              <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+          </div>
+          <button type="submit" class="btn-tracking-submit" id="btnTrackOrder">
+            <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+            <span>Rastrear Agora</span>
+          </button>
+          <p class="tracking-helper-note">Insira seu código de rastreio recebido pelo WhatsApp e e-mail</p>
+        </form>
+
+        <div class="tracking-result-box" id="trackingResultBox" style="display: none;"></div>
+      </div>
+
+      <!-- NAVEGAÇÃO RÁPIDA -->
+      <nav class="drawer-nav">
+        <span class="drawer-section-label">Menu de Navegação</span>
+        <ul class="drawer-nav-list">
+          <li>
+            <a href="#loja" class="drawer-nav-link" data-close-drawer>
+              <div class="nav-icon">
+                <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+              </div>
+              <div class="nav-link-text">
+                <span class="nav-title">Início / Produto</span>
+                <span class="nav-sub">Ver fotos e fórmula</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#kits" class="drawer-nav-link highlight" data-close-drawer>
+              <div class="nav-icon">
+                <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+              </div>
+              <div class="nav-link-text">
+                <span class="nav-title">Comprar com Desconto</span>
+                <span class="nav-sub">Kits de 1, 2 e 3 potes</span>
+              </div>
+              <span class="nav-badge">Até 50% OFF</span>
+            </a>
+          </li>
+          <li>
+            <a href="#beneficios" class="drawer-nav-link" data-close-drawer>
+              <div class="nav-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div class="nav-link-text">
+                <span class="nav-title">6 Magnésios + B12</span>
+                <span class="nav-sub">Benefícios e composição</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#avaliacoes" class="drawer-nav-link" data-close-drawer>
+              <div class="nav-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+              <div class="nav-link-text">
+                <span class="nav-title">Avaliações Reais</span>
+                <span class="nav-sub">Fotos de clientes</span>
+              </div>
+              <span class="nav-rating">4.9 ★</span>
+            </a>
+          </li>
+          <li>
+            <a href="#faq" class="drawer-nav-link" data-close-drawer>
+              <div class="nav-icon">
+                <svg viewBox="0 0 24 24"><path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"/></svg>
+              </div>
+              <div class="nav-link-text">
+                <span class="nav-title">Dúvidas Frequentes</span>
+                <span class="nav-sub">Como tomar, entrega, etc.</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- ATENDIMENTO & SUPORTE BLOQUEADO -->
+      <div class="drawer-support-box">
+        <div class="support-header-row">
+          <div class="support-title">Suporte WhatsApp</div>
+          <span class="support-locked-badge">
+            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+            <span>Bloqueado</span>
+          </span>
+        </div>
+        <div class="btn-drawer-whatsapp-locked" id="btnWhatsappLocked" role="status" aria-live="polite" title="WhatsApp disponível para suporte somente após a compra!">
+          <div class="whatsapp-lock-icon">
+            <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+          </div>
+          <p class="whatsapp-locked-msg">WhatsApp disponível para suporte somente após a compra!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="drawer-badge-row">
+        <div class="drawer-security-tag">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          <span>Ambiente 100% Seguro</span>
+        </div>
+      </div>
+      <p class="drawer-copy">Jota'B Suplementos © 2026</p>
+    </div>
+  </aside>
+
+  <!-- 3. SEÇÃO PRINCIPAL DE PRODUTO & COMPRA RÁPIDA (MOBILE FIRST) -->
+  <main class="container product-hero-section" id="loja">
+    
+    <div class="product-hero-grid">
+      
+      <!-- COLUNA DA ESQUERDA / GALERIA DE FOTOS INTERATIVA -->
+      <div class="product-gallery-col">
+        
+        <div class="product-meta-top">
+          <span class="product-category-tag">Fórmula Avançada 6 em 1</span>
+          <div class="product-anvisa-badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>RDC 243/2018 ANVISA</span>
+          </div>
+        </div>
+
+        <h1 class="product-title">6 Magnésios + B12 Metilcobalamina 60 Cápsulas | Jota'B</h1>
+        
+        <div class="product-rating-bar">
+          <div class="stars-group" aria-label="Avaliação 4.9 de 5 estrelas">
+            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          </div>
+          <span class="rating-score">4.9</span>
+          <a href="#avaliacoes" class="rating-count">(489 avaliações)</a>
+          <span class="sales-badge">+2.400 vendidos</span>
+        </div>
+
+        <!-- CONTAINER DA GALERIA -->
+        <div class="gallery-wrapper">
+          <div class="main-image-container" id="mainImageContainer">
+            <div class="gallery-tag-float">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+              <span>100% Original & Lacrado</span>
+            </div>
+            
+            <button type="button" class="btn-zoom-gallery" id="btnZoomGallery" aria-label="Ampliar imagem do produto">
+              <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/></svg>
+            </button>
+            
+            <img id="mainProductImage" src="assets/images/product_1.webp" alt="6 Magnésios + B12 Jota'B Suplemento Alimentar">
+            <span class="gallery-counter-float" id="galleryCounter">1 / 6</span>
+          </div>
+
+          <!-- MINIATURAS DA GALERIA -->
+          <div class="thumbnail-strip" id="thumbnailStrip">
+            <div class="thumb-item active" data-src="assets/images/product_1.webp" data-index="1">
+              <img src="assets/images/product_1.webp" alt="Frasco Frontal e Selos">
+            </div>
+            <div class="thumb-item" data-src="assets/images/product_2.webp" data-index="2">
+              <img src="assets/images/product_2.webp" alt="Fórmula 6 Magnésios">
+            </div>
+            <div class="thumb-item" data-src="assets/images/product_3.webp" data-index="3">
+              <img src="assets/images/product_3.webp" alt="Absorção e Benefícios">
+            </div>
+            <div class="thumb-item" data-src="assets/images/product_4.webp" data-index="4">
+              <img src="assets/images/product_4.webp" alt="Tabela Nutricional">
+            </div>
+            <div class="thumb-item" data-src="assets/images/product_5.webp" data-index="5">
+              <img src="assets/images/product_5.webp" alt="Uso Diário">
+            </div>
+            <div class="thumb-item" data-src="assets/images/product_6.webp" data-index="6">
+              <img src="assets/images/product_6.webp" alt="Detalhe do Frasco">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- COLUNA DA DIREITA / OFERTA E GATILHOS DE CONVERSÃO -->
+      <div class="product-offer-col">
+        
+        <div class="offer-box">
+          <div class="pricing-header">
+            <span class="price-original">De R$ 35,90</span>
+            <span class="price-current">R$ 24,90</span>
+            <span class="badge-discount">30% OFF</span>
+          </div>
+          <div class="installment-text">
+            ou em até <strong>12x de R$ 2,49</strong> no cartão
+          </div>
+
+          <!-- BARRA DE ESTOQUE / URGÊNCIA SUAVE -->
+          <div class="stock-status-bar">
+            <div class="stock-status-top">
+              <span>Restam apenas 14 unidades com desconto</span>
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+
+          <!-- BOTÃO PRINCIPAL DE COMPRA -->
+          <a href="#kits" class="btn-primary-cta" id="btnHeroBuy">
+            <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+            <span>ESCOLHER MEU KIT COM DESCONTO</span>
+          </a>
+
+          <!-- MICRO SELOS DE CONFIANÇA -->
+          <div class="micro-trust-badges">
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+              </div>
+              <span class="trust-label">Envio Rápido e Seguro</span>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+              </div>
+              <span class="trust-label">30 Dias de Garantia</span>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+              </div>
+              <span class="trust-label">Pagamento Blindado</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 4. BENEFÍCIOS PRINCIPAIS EM CARDS (COM ÍCONES SVG) -->
+    <section class="section-wrapper fade-in-scroll">
+      <span class="section-tag">Por Que Escolher Jota'B</span>
+      <h2 class="section-title">A sinergia perfeita para o seu corpo e mente</h2>
+      <p class="section-subtitle">Fórmula avançada que combina os 6 tipos de magnésio mais biodisponíveis com a Vitamina B12 em sua forma ativa.</p>
+
+      <div class="benefits-grid">
+        
+        <div class="benefit-card">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+          </div>
+          <div class="benefit-content">
+            <h3>Mais Energia e Disposição Diária</h3>
+            <p>Ajuda a combater o cansaço físico e mental crônico, restaurando a vitalidade celular desde a primeira semana.</p>
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.33 19.58 10.63 20 12 20c4.97 0 9-4.03 9-9 0-4.97-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
+          </div>
+          <div class="benefit-content">
+            <h3>Sono Profundo e Reparador</h3>
+            <p>Atua diretamente no relaxamento do sistema nervoso, facilitando o adormecer e evitando microdespertares noturnos.</p>
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg>
+          </div>
+          <div class="benefit-content">
+            <h3>Alívio Muscular e Fim das Cãibras</h3>
+            <p>Diminui a tensão e espasmos musculares, acelerando a recuperação física e o conforto das articulações.</p>
+          </div>
+        </div>
+
+        <div class="benefit-card highlight-b12">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <div class="benefit-content">
+            <h3>B12 Metilcobalamina (Forma Ativa)</h3>
+            <p>Diferente da cianocobalamina comum, a metilcobalamina é absorvida de forma imediata pelo cérebro e sistema neurológico.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. DETALHAMENTO DOS 6 TIPOS DE MAGNÉSIO -->
+    <section class="section-wrapper fade-in-scroll">
+      <span class="section-tag">Fórmula Completa</span>
+      <h2 class="section-title">Conheça as 6 formas ativas presentes no frasco</h2>
+      <p class="section-subtitle">Cada tipo de magnésio possui afinidade com um sistema específico do organismo:</p>
+
+      <div class="magnesium-types-list">
+        <div class="mag-item">
+          <div class="mag-number">1</div>
+          <div class="mag-info">
+            <h4>Bisglicinato de Magnésio</h4>
+            <p>Alta biodisponibilidade e suavidade digestiva. Ideal para relaxamento e foco mental.</p>
+          </div>
+        </div>
+        <div class="mag-item">
+          <div class="mag-number">2</div>
+          <div class="mag-info">
+            <h4>Malato de Magnésio (Dimagnésio)</h4>
+            <p>Atua na produção de ATP celular no ciclo de Krebs, fornecendo vigor e força muscular.</p>
+          </div>
+        </div>
+        <div class="mag-item">
+          <div class="mag-number">3</div>
+          <div class="mag-info">
+            <h4>Taurato de Magnésio</h4>
+            <p>Ligado ao aminoácido taurina, oferece excelente suporte cardiovascular e calmante neural.</p>
+          </div>
+        </div>
+        <div class="mag-item">
+          <div class="mag-number">4</div>
+          <div class="mag-info">
+            <h4>Ascorbato de Magnésio</h4>
+            <p>Combinação com Vitamina C que potencializa a imunidade e combate radicais livres.</p>
+          </div>
+        </div>
+        <div class="mag-item">
+          <div class="mag-number">5</div>
+          <div class="mag-info">
+            <h4>Hidróxido de Magnésio</h4>
+            <p>Equilíbrio do pH estomacal e suporte ao trânsito intestinal fisiológico.</p>
+          </div>
+        </div>
+        <div class="mag-item">
+          <div class="mag-number">6</div>
+          <div class="mag-info">
+            <h4>Óxido de Magnésio</h4>
+            <p>Complementa a absorção gradual de magnésio elementar ao longo do dia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SELEÇÃO DE KITS COM DESCONTO (PREÇOS CHEIOS TERMINANDO EM ,90) -->
+    <section class="section-wrapper fade-in-scroll" id="kits">
+      <span class="section-tag">Oferta por Tempo Limitado</span>
+      <h2 class="section-title">Selecione o seu Kit de Tratamento</h2>
+      <p class="section-subtitle">Recomendamos o tratamento contínuo de 3 a 5 meses para máxima restauração metabólica:</p>
+
+      <div class="kits-container">
+        
+        <!-- KIT 3 POTES (MAIS VENDIDO - 50% OFF) -->
+        <div class="kit-card featured selected" data-kit="3" data-price="92,90" data-installments="12x de R$ 9,29" data-save="93,00">
+          <div class="kit-badge-top">
+            <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            <span>MAIS VENDIDO • 50% OFF</span>
+          </div>
+
+          <div class="kit-header">
+            <div class="kit-radio"></div>
+            <div class="kit-title-group">
+              <h3>KIT 3 POTES (180 CÁPSULAS)</h3>
+              <p>Tratamento para 3 Meses • Mais Recomendado</p>
+            </div>
+          </div>
+
+          <div class="kit-body">
+            <div class="kit-image-preview">
+              <img src="assets/images/kit_3.jpg" alt="Kit 3 Potes Magnésio B12 Jota'B">
+            </div>
+            <div class="kit-price-col">
+              <span class="kit-price-old">De R$ 185,90</span>
+              <div class="kit-price-main">R$ 92,90</div>
+              <div class="kit-shipping-tag">
+                <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+                <span>FRETE GRÁTIS</span>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn-select-kit">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <span>COMPRAR 3 POTES (R$ 92,90)</span>
+          </button>
+        </div>
+
+        <!-- KIT 2 POTES (40% OFF) -->
+        <div class="kit-card" data-kit="2" data-price="47,90" data-installments="12x de R$ 4,79" data-save="32,00">
+          <div class="kit-badge-top" style="background: var(--color-accent-blue);">
+            <svg viewBox="0 0 24 24"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+            <span>40% OFF</span>
+          </div>
+
+          <div class="kit-header">
+            <div class="kit-radio"></div>
+            <div class="kit-title-group">
+              <h3>KIT 2 POTES (120 CÁPSULAS)</h3>
+              <p>Tratamento para 2 Meses</p>
+            </div>
+          </div>
+
+          <div class="kit-body">
+            <div class="kit-image-preview">
+              <img src="assets/images/product_1.webp" alt="Kit 2 Potes Magnésio B12 Jota'B">
+            </div>
+            <div class="kit-price-col">
+              <span class="kit-price-old">De R$ 79,90</span>
+              <div class="kit-price-main">R$ 47,90</div>
+              <div class="kit-shipping-tag">
+                <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4z"/></svg>
+                <span>FRETE GRÁTIS</span>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn-select-kit">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <span>COMPRAR 2 POTES (R$ 47,90)</span>
+          </button>
+        </div>
+
+        <!-- KIT 1 POTE (EXPERIMENTE - 30% OFF) -->
+        <div class="kit-card" data-kit="1" data-price="24,90" data-installments="12x de R$ 2,49" data-save="11,00">
+          <div class="kit-badge-top" style="background: var(--text-light);">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+            <span>EXPERIMENTE • 30% OFF</span>
+          </div>
+
+          <div class="kit-header">
+            <div class="kit-radio"></div>
+            <div class="kit-title-group">
+              <h3>1 POTE (60 CÁPSULAS)</h3>
+              <p>Tratamento para 1 Mês (30 dias)</p>
+            </div>
+          </div>
+
+          <div class="kit-body">
+            <div class="kit-image-preview">
+              <img src="assets/images/product_1.webp" alt="1 Pote Magnésio B12 Jota'B">
+            </div>
+            <div class="kit-price-col">
+              <span class="kit-price-old">De R$ 35,90</span>
+              <div class="kit-price-main">R$ 24,90</div>
+            </div>
+          </div>
+
+          <button type="button" class="btn-select-kit">
+            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <span>COMPRAR 1 POTE (R$ 24,90)</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- GARANTIA BLINDADA 30 DIAS -->
+      <div class="guarantee-card">
+        <div class="guarantee-seal-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        </div>
+        <div class="guarantee-content">
+          <h3>Garantia Blindada de 30 Dias Jota'B</h3>
+          <p>Tome o 6 Magnésios + B12 diariamente. Se em até 30 dias você não notar melhora na sua disposição, energia e qualidade do sono, basta nos enviar um e-mail que devolveremos 100% do seu dinheiro, sem burocracia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. AVALIAÇÕES REAIS DOS CLIENTES (EXTRAÍDAS DO TIKTOK SHOP) -->
+    <section class="section-wrapper fade-in-scroll" id="avaliacoes">
+      <span class="section-tag">Opinião de Quem Já Comprou</span>
+      <h2 class="section-title">Avaliações de Clientes Verificados</h2>
+      <p class="section-subtitle">Confira os relatos reais de quem já experimentou o 6 Magnésios + B12 Jota'B:</p>
+
+      <!-- RESUMO DA PONTUAÇÃO -->
+      <div class="reviews-summary-card">
+        <div class="summary-score-col">
+          <div class="big-rating-number">4.9</div>
+          <div class="score-details-col">
+            <div class="stars-group">
+              <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <span class="verified-rate-label">99.4% de satisfação positiva</span>
+          </div>
+        </div>
+        <div class="verified-store-tag">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          <span>Compras 100% Reais</span>
+        </div>
+      </div>
+
+      <!-- FILTROS DE AVALIAÇÃO -->
+      <div class="filter-pills" id="reviewFilterPills">
+        <button type="button" class="pill-btn active" data-filter="all">Todas (38)</button>
+        <button type="button" class="pill-btn" data-filter="photos">Com Fotos (12)</button>
+        <button type="button" class="pill-btn" data-filter="5stars">5 Estrelas (36)</button>
+        <button type="button" class="pill-btn" data-filter="repurchase">Recompram Sempre</button>
+      </div>
+
+      <!-- LISTA DE AVALIAÇÕES (INJETADA DINAMICAMENTE VIA SCRIPT) -->
+      <div class="reviews-list" id="reviewsContainer">
+        <!-- Renderizado por script.js -->
+      </div>
+
+      <button type="button" class="btn-load-more-reviews" id="btnLoadMoreReviews">
+        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+        <span>Carregar Mais Avaliações</span>
+      </button>
+
+    </section>
+
+    <!-- 8. PERGUNTAS FREQUENTES (FAQ ACCORDION) -->
+    <section class="section-wrapper fade-in-scroll">
+      <span class="section-tag">Dúvidas Frequentes</span>
+      <h2 class="section-title">Perguntas e Respostas</h2>
+      <p class="section-subtitle">Tudo o que você precisa saber sobre o Magnésio B12 Jota'B:</p>
+
+      <div class="faq-list">
+        
+        <div class="faq-item active">
+          <button type="button" class="faq-question">
+            <span>Como devo tomar o 6 Magnésios + B12?</span>
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Recomenda-se a ingestão de 2 cápsulas ao dia com um copo de água, preferencialmente 30 a 60 minutos antes de dormir ou acompanhando uma das principais refeições do dia.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Em quanto tempo começo a notar os benefícios?</span>
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Os primeiros efeitos no relaxamento muscular e qualidade do sono costumam ser sentidos já nos primeiros 3 a 7 dias de uso diário. Benefícios metabólicos, clareza mental e combate ao cansaço crônico consolidam-se a partir de 3 a 4 semanas de uso contínuo.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>O produto possui aprovação na ANVISA?</span>
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Sim! O produto 6 Magnésios + B12 Jota'B segue rigorosamente as diretrizes da RDC nº 243/2018 da ANVISA e está enquadrado na categoria de suplementos alimentares pela RDC 990/2025, garantindo 100% de segurança, pureza e conformidade legal.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Possui efeitos colaterais ou contraindicações?</span>
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Por ser um suplemento mineral e vitamínico com fontes quelatadas e suaves, não costuma causar desconforto gástrico. É indicado para adultos saudáveis a partir de 19 anos. Gestantes, lactantes e pessoas com insuficiência renal severa devem consultar um médico antes do uso.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button type="button" class="faq-question">
+            <span>Qual é o prazo de entrega para o meu endereço?</span>
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Nossos pedidos são despachados em até 24 horas úteis. O prazo médio de entrega para capitais e regiões Sul e Sudeste é de 3 a 7 dias úteis, e para as demais regiões do Brasil de 5 a 12 dias úteis, com código de rastreamento enviado diretamente no seu WhatsApp e e-mail.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 9. RODAPÉ COMPLETO -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        
+        <!-- COLUNA 1: MARCA & SOBRE -->
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 12px;">
+            <img src="logojotab.png" alt="Jota'B Suplementos Logo" class="brand-logo-img footer-logo-img">
+            <div class="brand-logo-text" style="color: #ffffff;">JOTA'B<span style="color: #10b981;">.</span></div>
+          </div>
+          <p style="font-size: 0.78rem; color: #94a3b8; line-height: 1.5; margin-bottom: 14px;">
+            Jota'B Suplementos Nutricionais — Desenvolvendo fórmulas de alta pureza e biodisponibilidade para transformar a sua saúde, sono e vitalidade.
+          </p>
+          <div class="footer-security-seals">
+            <div class="seal-tag">
+              <svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+              <span>SSL 256-Bit</span>
+            </div>
+            <div class="seal-tag">
+              <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+              <span>Site Blindado</span>
+            </div>
+            <div class="seal-tag">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span>Original ANVISA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUNA 2: ATENDIMENTO & DADOS -->
+        <div class="footer-col">
+          <h4>Atendimento ao Cliente</h4>
+          <ul class="footer-links">
+            <li><strong>Horário:</strong> Seg a Sex, das 09h às 18h</li>
+            <li><strong>WhatsApp:</strong> Suporte exclusivo para clientes (pós-compra)</li>
+            <li><strong>E-mail:</strong> sac@jotabsuplementos.com.br</li>
+            <li><strong>Despacho:</strong> Rastreamento Correios e Jadlog</li>
+          </ul>
+
+          <h4 style="margin-top: 16px;">Formas de Pagamento</h4>
+          <div class="payment-methods-grid">
+            <div class="pay-card">
+              <svg viewBox="0 0 800 800" fill="#10b981"><path d="M 398 445 L 393 447 L 284 556 L 268 569 L 249 579 L 232 584 L 213 585 L 212 586 L 191 586 L 326 721 L 337 730 L 352 739 L 374 747 L 384 748 L 385 749 L 414 749 L 415 748 L 420 748 L 421 747 L 432 745 L 445 739 L 447 739 L 456 734 L 467 726 L 475 719 L 608 585 L 586 585 L 585 584 L 578 584 L 557 578 L 540 569 L 528 560 L 415 447 L 413 447 L 410 445 Z" /><path d="M 49 396 L 50 414 L 51 415 L 51 420 L 52 421 L 53 429 L 58 443 L 67 459 L 77 472 L 161 555 L 166 555 L 167 554 L 224 554 L 229 552 L 233 552 L 252 543 L 261 536 L 373 424 L 383 418 L 396 414 L 412 414 L 413 415 L 417 415 L 425 419 L 427 419 L 435 424 L 548 537 L 556 543 L 568 549 L 581 553 L 586 553 L 587 554 L 635 554 L 638 555 L 718 476 L 728 464 L 736 452 L 741 442 L 745 431 L 745 428 L 748 419 L 748 413 L 749 412 L 749 387 L 748 386 L 747 375 L 742 359 L 732 340 L 727 333 L 638 244 L 635 244 L 634 245 L 586 245 L 585 246 L 573 248 L 561 253 L 549 261 L 435 375 L 428 380 L 426 380 L 415 385 L 399 386 L 398 385 L 389 384 L 380 380 L 374 376 L 261 263 L 252 256 L 239 249 L 236 249 L 233 247 L 225 246 L 224 245 L 167 245 L 162 243 L 81 323 L 69 337 L 60 352 L 60 354 L 55 364 L 54 370 L 52 374 L 52 378 L 51 379 L 50 395 Z" /><path d="M 386 50 L 385 51 L 379 51 L 378 52 L 367 54 L 361 57 L 359 57 L 352 61 L 350 61 L 332 73 L 192 213 L 192 214 L 212 214 L 213 213 L 217 213 L 218 214 L 232 215 L 249 220 L 265 228 L 280 239 L 281 241 L 282 241 L 393 352 L 398 354 L 405 355 L 415 352 L 528 239 L 537 232 L 557 221 L 569 217 L 573 217 L 579 215 L 585 215 L 586 214 L 608 214 L 467 73 L 452 63 L 432 54 L 429 54 L 420 51 L 414 51 L 413 50 Z" /></svg>
+              <span>PIX Instantâneo</span>
+            </div>
+            <div class="pay-card">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg>
+              <span>Cartão de Crédito</span>
+            </div>
+            <div class="pay-card">
+              <svg viewBox="0 0 24 24"><path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/></svg>
+              <span>Boleto Bancário</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUNA 3: POLÍTICAS & LINKS ÚTEIS -->
+        <div class="footer-col">
+          <h4>Políticas & Informações</h4>
+          <ul class="footer-links">
+            <li><a href="#loja">Rastrear Meu Pedido</a></li>
+            <li><a href="#loja">Política de Privacidade</a></li>
+            <li><a href="#loja">Termos de Uso e Serviço</a></li>
+            <li><a href="#loja">Política de Reembolso e Devoluções</a></li>
+            <li><a href="#loja">Fale Conosco</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- AVISO LEGAL ANVISA -->
+      <div class="footer-legal-notice">
+        <p><strong>Aviso Legal ANVISA:</strong> Produto dispensado de registro de acordo com a RDC nº 243/2018 e enquadrado na categoria de suplementos alimentares (RDC 990/2025). Este produto não é um medicamento e não substitui uma alimentação equilibrada ou orientação médica. Não exceder a recomendação diária de consumo indicada na embalagem.</p>
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div class="footer-copyright">
+        <p>© 2026 Jota'B Suplementos Nutricionais Ltda. Todos os direitos reservados. CNPJ: 00.000.000/0001-00</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- 10. BARRA STICKY MOBILE (COMPRAR AGORA FIXO NA PARTE INFERIOR) -->
+  <div class="sticky-mobile-bar" id="stickyMobileBar">
+    <div class="sticky-product-info">
+      <div class="sticky-thumb">
+        <img src="assets/images/product_1.webp" alt="Miniatura Produto">
+      </div>
+      <div class="sticky-price-col">
+        <span class="sticky-price-label">A partir de</span>
+        <span class="sticky-price-val" id="stickyPriceDisplay">R$ 24,90</span>
+      </div>
+    </div>
+    
+    <a href="#kits" class="sticky-buy-btn" id="stickyBuyBtn">
+      <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+      <span>COMPRAR AGORA</span>
+    </a>
+  </div>
+
+  <!-- 11. MODAL LIGHTBOX PARA ZOOM DE IMAGEM -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-hidden="true">
+    <div class="lightbox-content">
+      <button type="button" class="btn-close-lightbox" id="btnCloseLightbox" aria-label="Fechar zoom">
+        <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      </button>
+      <img id="lightboxImage" src="assets/images/product_1.webp" alt="Visualização em alta resolução">
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/reviews-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

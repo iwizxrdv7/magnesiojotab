@@ -1,0 +1,13 @@
+{
+  "name": "magnesio-b12-jotab",
+  "version": "1.0.0",
+  "description": "6 Magnésios + B12 Jota'B - Loja Oficial e Checkout de Alta Conversão",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
