@@ -1,6 +1,6 @@
 // api/_beehive.js - Módulo de integração centralizada com a BeehivePay
-const BEEHIVE_SECRET_KEY = process.env.BEEHIVE_SECRET_KEY || "sk_live_v2lgpH4ppJHXOTnCWC6rRi0APVyIYVmBiIBsrW4a6p";
-const BEEHIVE_PUBLIC_KEY = process.env.BEEHIVE_PUBLIC_KEY || "pk_live_v2NUd6XWzAeFQdiVm2hMY24ZogD37OiytN";
+const BEEHIVE_SECRET_KEY = process.env.BEEHIVE_SECRET_KEY;
+const BEEHIVE_PUBLIC_KEY = process.env.BEEHIVE_PUBLIC_KEY;
 const BEEHIVE_API_BASE_URL = process.env.BEEHIVE_API_BASE_URL || "https://api.conta.paybeehive.com.br/v1";
 
 function getAuthHeader() {
