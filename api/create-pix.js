@@ -1,5 +1,5 @@
-// api/create-pix.js - Criação de transação PIX na BeehivePay (100% White-Label)
-const { callBeehiveApi, transactionStatusStore } = require('./_beehive');
+// api/create-pix.js - Criação de transação PIX na SyncPay (100% White-Label)
+const { callSyncPayApi, syncPayStatusStore } = require('./_syncpay');
 
 function cleanDigits(str) {
   return (str || '').toString().replace(/\D/g, '');
@@ -25,99 +25,93 @@ module.exports = async function handler(req, res) {
   try {
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {});
     const customer = body.customer || {};
-    const items = body.items && body.items.length > 0 ? body.items : [
-      {
-        title: "6 Magnésios + B12 Jota'B",
-        unitPrice: parseInt(body.amount, 10) || 9290,
-        quantity: 1,
-        tangible: true
-      }
-    ];
 
-    const amount = parseInt(body.amount, 10) || 9290;
+    // Valor em centavos para compatibilidade ou float em Reais
+    let rawAmount = body.amount || 9290;
+    let amountInReais = typeof rawAmount === 'number' && rawAmount > 500 ? (rawAmount / 100) : Number(rawAmount);
+    if (!amountInReais || isNaN(amountInReais)) amountInReais = 92.90;
+    amountInReais = Number(amountInReais.toFixed(2));
+
     const orderNumber = Math.floor(100000 + Math.random() * 900000);
     const orderId = body.orderId || `JB-${orderNumber}`;
-    const cleanCpfNumber = cleanDigits(customer.documentNumber || customer.cpf) || "60188241086";
-    const cleanPhoneNumber = cleanDigits(customer.phone) || "11999998888";
+    
+    // Tratamento de CPF (exatamente 11 dígitos numéricos)
+    let cleanCpfNumber = cleanDigits(customer.documentNumber || customer.cpf);
+    if (!cleanCpfNumber || cleanCpfNumber.length !== 11) {
+      cleanCpfNumber = "60188241086";
+    }
 
-    // URL base dinâmica para o Webhook
+    // Tratamento de Telefone (10 ou 11 dígitos numéricos)
+    let cleanPhoneNumber = cleanDigits(customer.phone);
+    if (!cleanPhoneNumber || (cleanPhoneNumber.length !== 10 && cleanPhoneNumber.length !== 11)) {
+      cleanPhoneNumber = "11999998888";
+    }
+
+    const customerName = (customer.name || customer.fullName || "Cliente Jota'B").trim();
+    const customerEmail = (customer.email || "contato@jotabsuplementos.com.br").trim().toLowerCase();
+
+    // URL base dinâmica para webhook
     const protocol = req.headers['x-forwarded-proto'] || 'http';
     const host = req.headers['x-forwarded-host'] || req.headers.host || 'localhost:8080';
     const isLocalhost = !host || host.includes('localhost') || host.includes('127.0.0.1');
-    const domainUrl = isLocalhost ? 'https://jotabsuplementos.com.br' : `${protocol}://${host}`;
     const webhookUrl = isLocalhost ? null : `${protocol}://${host}/api/webhook`;
 
     const payload = {
-      amount: amount,
-      paymentMethod: "pix",
-      customer: {
-        name: (customer.name || customer.fullName || "Cliente Jota'B").trim(),
-        email: (customer.email || "contato@jotabsuplementos.com.br").trim(),
-        phone: cleanPhoneNumber,
-        document: {
-          type: "cpf",
-          number: cleanCpfNumber
-        }
-      },
-      items: items.map(item => ({
-        title: item.title || "6 Magnésios + B12 Jota'B",
-        unitPrice: parseInt(item.unitPrice, 10) || amount,
-        quantity: parseInt(item.quantity, 10) || 1,
-        tangible: item.tangible !== false
-      })),
-      metadata: {
-        provider: "jotab-suplementos",
-        user_email: customer.email || "contato@jotabsuplementos.com.br",
-        order_id: orderId,
-        checkout_url: `${domainUrl}/checkout.html`,
-        shop_url: domainUrl
-      },
-      pix: {
-        expiresInSeconds: 3600
+      amount: amountInReais,
+      description: `6 Magnésios + B12 Jota'B - Pedido #${orderId}`,
+      client: {
+        name: customerName,
+        cpf: cleanCpfNumber,
+        email: customerEmail,
+        phone: cleanPhoneNumber
       }
     };
 
     if (webhookUrl) {
-      payload.postbackUrl = webhookUrl;
+      payload.webhook_url = webhookUrl;
     }
 
-    const beehiveResponse = await callBeehiveApi('/transactions', {
+    // Chamada à API da SyncPay (Cash-In)
+    const syncPayResponse = await callSyncPayApi('/api/partner/v1/cash-in', {
       method: 'POST',
       body: JSON.stringify(payload)
     });
 
-    const transactionId = beehiveResponse.id;
-    const qrCodeText = beehiveResponse.pix?.qrcode || '';
-    const status = beehiveResponse.status || 'waiting_payment';
+    const transactionId = syncPayResponse.identifier;
+    const qrCodeText = syncPayResponse.pix_code || '';
+    const status = 'waiting_payment';
 
-    // Salva status inicial no cache de memória
+    // Salva no cache em memória
     if (transactionId) {
-      transactionStatusStore.set(transactionId.toString(), {
+      syncPayStatusStore.set(transactionId.toString(), {
         id: transactionId,
+        gateway: 'syncpay',
         status: status,
         orderId: orderId,
-        amount: amount,
-        customerName: customer.name || customer.fullName || "Cliente",
+        amount: Math.round(amountInReais * 100),
+        amountReais: amountInReais,
+        customerName: customerName,
+        pixCode: qrCodeText,
         updatedAt: new Date().toISOString()
       });
     }
 
     res.status(200).json({
       success: true,
+      gateway: 'syncpay',
       transactionId: transactionId,
       orderId: orderId,
       status: status,
-      amount: amount,
+      amount: Math.round(amountInReais * 100),
       qrCodeText: qrCodeText,
-      expiresAt: beehiveResponse.pix?.expirationDate || null,
-      raw: beehiveResponse
+      raw: syncPayResponse
     });
 
   } catch (error) {
-    console.error('Erro ao criar transação PIX:', error);
+    console.error('Erro ao criar transação PIX na SyncPay:', error);
     res.status(error.status || 500).json({
       success: false,
-      error: error.message || 'Erro ao processar PIX',
+      error: error.message || 'Erro ao processar PIX na SyncPay',
       details: error.details || null
     });
   }
