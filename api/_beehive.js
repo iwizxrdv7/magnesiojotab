@@ -4,7 +4,11 @@ const BEEHIVE_PUBLIC_KEY = process.env.BEEHIVE_PUBLIC_KEY;
 const BEEHIVE_API_BASE_URL = process.env.BEEHIVE_API_BASE_URL || "https://api.conta.paybeehive.com.br/v1";
 
 function getAuthHeader() {
-  const token = Buffer.from(`${BEEHIVE_SECRET_KEY}:x`).toString("base64");
+  const secretKey = BEEHIVE_SECRET_KEY || process.env.BEEHIVE_SECRET_KEY;
+  if (!secretKey) {
+    throw new Error("Credenciais da BeehivePay não configuradas. Adicione BEEHIVE_SECRET_KEY nas variáveis de ambiente da Vercel.");
+  }
+  const token = Buffer.from(`${secretKey}:x`).toString("base64");
   return `Basic ${token}`;
 }
 

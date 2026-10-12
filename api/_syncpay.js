@@ -1,6 +1,6 @@
 // api/_syncpay.js - Módulo de integração centralizada com a SyncPay (100% White-Label)
-const SYNCPAY_CLIENT_ID = process.env.SYNCPAY_CLIENT_ID || "4911e9d4-6405-45c1-8dc8-9987e8f39204";
-const SYNCPAY_CLIENT_SECRET = process.env.SYNCPAY_CLIENT_SECRET || "c3de8210-5a55-4c2e-bb6a-82c71fd7eee2";
+const SYNCPAY_CLIENT_ID = process.env.SYNCPAY_CLIENT_ID;
+const SYNCPAY_CLIENT_SECRET = process.env.SYNCPAY_CLIENT_SECRET;
 const SYNCPAY_API_BASE_URL = process.env.SYNCPAY_API_BASE_URL || "https://api.syncpayments.com.br";
 
 let cachedToken = null;
@@ -10,6 +10,13 @@ let tokenExpiresAt = 0;
  * Obtém ou renova o token Bearer da SyncPay (com cache em memória para reaproveitar)
  */
 async function getSyncPayToken() {
+  const clientId = SYNCPAY_CLIENT_ID || process.env.SYNCPAY_CLIENT_ID;
+  const clientSecret = SYNCPAY_CLIENT_SECRET || process.env.SYNCPAY_CLIENT_SECRET;
+
+  if (!clientId || !clientSecret) {
+    throw new Error("Credenciais da SyncPay não configuradas. Adicione SYNCPAY_CLIENT_ID e SYNCPAY_CLIENT_SECRET nas variáveis de ambiente da Vercel.");
+  }
+
   const now = Date.now();
   // Se ainda temos um token válido (com folga de 2 minutos antes de expirar), reutilizamos
   if (cachedToken && now < (tokenExpiresAt - 120000)) {
@@ -24,8 +31,8 @@ async function getSyncPayToken() {
       "Accept": "application/json"
     },
     body: JSON.stringify({
-      client_id: SYNCPAY_CLIENT_ID,
-      client_secret: SYNCPAY_CLIENT_SECRET
+      client_id: clientId,
+      client_secret: clientSecret
     })
   });
 
